@@ -29,48 +29,16 @@
   <div fxFlex="40">
     
     <div fxFlex *ngIf="dish">
-        
-    	<mat-list fxFlex>
-  			<mat-list-item>
-    		<p mat-line> {{dish.comments[0].comment}} </p>
-    		<p mat-line>
-     		 <span> {{dish.comments[0].rating}} Stars </span>
-    		</p>
-    		<p mat-line> --{{dish.comments[0].author}}  {{dish.comments[0].date | date}}</p>
-
-  			</mat-list-item>
-  			<mat-list-item>
-    		<p mat-line> {{dish.comments[1].comment}} </p>
-    		<p mat-line>
-     		 <span> {{dish.comments[1].rating}} Stars </span>
-    		</p>
-    		<p mat-line> --{{dish.comments[1].author}}  {{dish.comments[1].date | date}}</p>
-
-  			</mat-list-item>
-  			<mat-list-item>
-    		<p mat-line> {{dish.comments[2].comment}} </p>
-    		<p mat-line>
-     		 <span> {{dish.comments[2].rating}} Stars </span>
-    		</p>
-    		<p mat-line> --{{dish.comments[2].author}}  {{dish.comments[2].date | date}}</p>
-
-  			</mat-list-item>
-  			<mat-list-item>
-    		<p mat-line> {{dish.comments[3].comment}} </p>
-    		<p mat-line>
-     		 <span> {{dish.comments[3].rating}} Stars </span>
-    		</p>
-    		<p mat-line> --{{dish.comments[3].author}}  {{dish.comments[3].date | date}}</p>
-
-  			</mat-list-item>
-  			<mat-list-item>
-    		<p mat-line> {{dish.comments[4].comment}} </p>
-    		<p mat-line>
-     		 <span> {{dish.comments[4].rating}} Stars </span>
-    		</p>
-    		<p mat-line> --{{dish.comments[4].author}}  {{dish.comments[4].date | date}}</p>
-
-  			</mat-list-item>
+       
+		<mat-list fxFlex>
+			<mat-list-item>
+				<h1>Comments:</h1>
+			</mat-list-item>
+			<mat-list-item *ngFor="let comment of dish.comments">
+			<p mat-line> {{comment.comment}} </p>
+			<p mat-line> {{comment.rating}} Stars </p>
+			<p mat-line> -- {{comment.author}} {{comment.date | date}} </p>
+			</mat-list-item>
 		</mat-list>
 
     </div>
